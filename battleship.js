@@ -2,6 +2,7 @@
 var rows = 10;
 var cols = 10;
 var squareSize = 50;
+var letterArray = ['A','B','C','D','E','F','G','H','I','J']
 
 // gets the container element
 var gameBoardContainer = document.getElementById("gameboard");
@@ -30,10 +31,13 @@ for (i = 0; i < cols; i++) {
 		gameBoardContainer.appendChild(square);
 
     // give each div element a unique id based on its row and column, like "s00"
-		square.id = 's' + j + i;
+		square.id = 'letterArray' + j + i;
 		square.className = "boardSquare";
 
 		// THIS IS WHERE YOU WILL ADD CODE FOR PART 1 TO ADD TEXT TO EACH SQUARE
+
+
+
 
 		// set each grid square's coordinates: multiples of the current row or column number
 		var topPosition = j * squareSize;
@@ -42,8 +46,8 @@ for (i = 0; i < cols; i++) {
 		// use CSS absolute positioning to place each grid square on the page
 		square.style.top = topPosition + 'px';
 		square.style.left = leftPosition + 'px';
-	}
-}
+  }
+ }
 
 // Hardcoded 2D array to indicate where the ships are placed
 var gameBoard = [
