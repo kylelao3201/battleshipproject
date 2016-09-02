@@ -3,7 +3,7 @@ var rows = 10;
 var cols = 10;
 var squareSize = 50;
 var letterArray = ['A','B','C','D','E','F','G','H','I','J'];
-
+var numberArray = ['1','2','3','4','5','6','7','8','9','10'];
 
 // gets the container element
 var gameBoardContainer = document.getElementById("gameboard");
@@ -22,6 +22,18 @@ var letterConversion = {
 	"I": 8,
 	"J": 9
 }
+var numberConversion = {
+	"1": 0,
+	"2": 1,
+	"3": 2,
+	"4": 3,
+	"5": 4,
+	"6": 5,
+	"7": 6,
+	"8": 7,
+	"9": 8,
+	"10": 9
+}
 
 // makes the grid columns and rows
 for (i = 0; i < cols; i++) {
@@ -38,7 +50,9 @@ for (i = 0; i < cols; i++) {
 		// THIS IS WHERE YOU WILL ADD CODE FOR PART 1 TO ADD TEXT TO EACH SQUARE
 
 
-		square.textContent = letterArray[j];
+		square.textContent = letterArray[j] + numberArray[i];
+
+
 
 
 		// set each grid square's coordinates: multiples of the current row or column number
