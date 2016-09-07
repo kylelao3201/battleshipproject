@@ -82,5 +82,8 @@ var gameBoard = [
 function fireTorpedo() {
 
 	// Your game logic will go here!
-
+var userInput = $("#userGuess").val();
+X.substring(0,4)
+var row = userInput.substring(0,1);
+var column userInput.substring(1,2);
 }
