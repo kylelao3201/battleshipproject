@@ -20,7 +20,7 @@ var letterConversion = {
 	"H": 7,
 	"I": 8,
 	"J": 9
-
+}
 
 // makes the grid columns and rows
 var letterArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
