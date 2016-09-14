@@ -1,4 +1,5 @@
 // sets grid rows and columns and the size of each square
+var hitCount = 0;
 var rows = 10;
 var cols = 10;
 var squareSize = 50;
@@ -58,9 +59,9 @@ for (i = 0; i < cols; i++) {
 var gameBoard = [
 				[0,0,0,1,1,1,1,0,0,0],
 				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,1,0,0,0,0],
+				[0,0,0,0,0,1,0,0,0,0],
 				[0,0,0,0,0,0,0,0,0,0],
-				[0,0,0,0,0,0,1,0,0,0],
-				[0,0,0,0,0,0,1,0,0,0],
 				[1,0,0,0,0,0,1,1,1,1],
 				[1,0,0,0,0,0,0,0,0,0],
 				[1,0,0,1,0,0,0,0,0,0],
@@ -68,19 +69,30 @@ var gameBoard = [
 				[1,0,0,0,0,0,0,0,0,0]
 				]
 
+var numberhit = 17;
+  $("#numberhit").text(numberhit + "ships you have not hit");
 
 	function fireTorpedo() {
 						var userInput = $("#userInput").val();
 						console.log("userInput is " + userInput);
 						var rowBeforeConversion = userInput.substring(0,1);
 						var  column = userInput.substring(1,3) - 1;
-						row = letterConversion[rowBeforeConversion];
+						var row = letterConversion[rowBeforeConversion];
 					  var Userguess = gameBoard[row][column]
-					  var myDivString = "#s" + row + column;
+					  var myDivString = 's' + row + column;
 					  if(Userguess == 1) {
-					      $(myDivString).css("background-color", "red");
+					      $("#" + myDivString).css("background-color", "red");
+								hitCount += 1;
+								numberhit -= 1;
+								$("#numberhit").text(numberhit  + "ships you have not hit");
+								console.log(numberhit);
 						}
 						else {
-							$(myDivString).css("background-color", "grey");
+							$("#" + myDivString).css("background-color", "grey");
 						}
-}
+						if(hitCount == 2)
+						{
+							$("body").text("YOU SUNK ALL MY SHIPS");
+						}
+						console.log(hitCount);
+						}
