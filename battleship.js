@@ -90,7 +90,7 @@ var numberhit = 17;
 						else {
 							$("#" + myDivString).css("background-color", "grey");
 						}
-						if(hitCount == 2)
+						if(hitCount == 17)
 						{
 							$("body").text("YOU SUNK ALL MY SHIPS");
 						}
